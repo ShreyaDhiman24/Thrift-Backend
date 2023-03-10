@@ -1,22 +1,3 @@
-/* a) inside data we have imgURL--> use it to load image 
-b) make a state const [url, setURL] = useState(null);
-c)  useEffect(() => {
-    if(data is loaded){
-        const imageURL = data.imageURL;
-        use function to download URL
-        firebase.getImageURL(imageURL).then(url jo aayega  => usko setURL(url))
-
-    }
-    }, [use this hook jab humara data change ho]);
-d) style your img
-<img src={url} width="500px" style={{borderRadius: "10px"}}  />
-e) get all other required data
-f) add buy now button - buy: entry in firestore from where user can buy this 
-
-BUY NOW button functioning:
-
-
-*/
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
