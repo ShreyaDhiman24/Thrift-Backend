@@ -14,7 +14,7 @@ const ListingPage = () => {
     const [coverPic, setCoverPic] = useState("");
 
     const handleSubmit = async(e) => {
-e.preventDefalut();
+e.preventDefault();
 await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
     };
 
@@ -47,7 +47,7 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                         onChange={(e) => setPrice(e.target.value)}
                         value={price}
                         type="number"
-                        placeholder="Price"
+                        placeholder="Enter Price"
                     />
                 </Form.Group>
 
@@ -55,7 +55,6 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                     <Form.Label>Cover Picture</Form.Label>
                     <Form.Control
                         onChange={(e) => setCoverPic(e.target.files[0])}
-                        value={coverPic}
                         type="file"
                     />
                 </Form.Group>
