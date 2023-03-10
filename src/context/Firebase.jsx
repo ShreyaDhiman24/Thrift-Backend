@@ -8,7 +8,7 @@ import {
     signInWithPopup,
     onAuthStateChanged
 } from "firebase/auth"
-import { getFirestore, collection, addDoc, getDoc, getDocs, Firestore, doc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, Firestore, doc,getDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const FirebaseContext = createContext(null);
