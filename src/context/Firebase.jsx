@@ -1,19 +1,15 @@
-/*
-
-
-*/
 import { createContext, useContext, useState, useEffect } from "react";
 import { initializeApp } from 'firebase/app';
 import {
     getAuth,
-    createUserWithEmailAndPassword, 
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
     onAuthStateChanged
 } from "firebase/auth"
-import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getFirestore, collection, addDoc, getDocs, Firestore } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const FirebaseContext = createContext(null);
 
@@ -41,7 +37,7 @@ export const FirebaseProvider = (probs) => {
 
     useEffect(() => {
         onAuthStateChanged(firebaseAuth, user => {
-            console.log("user", user);
+            // console.log("user", user);
             if (user) setUser(user);
             else setUser(null);
         });
@@ -54,10 +50,9 @@ export const FirebaseProvider = (probs) => {
 
     const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider)
 
-    console.log(user)
 
     const handleCreateNewListing = async (name, isbn, price, coverPic) => {
-        const imageRef = ref(storage, "uploads/images/${Date.now()}-${coverPic.name}")
+        const imageRef = ref(storage, `uploads/images/${Date.now()}-${coverPic.name}`)
         const uploadResult = await uploadBytes(imageRef, coverPic);
         return await addDoc(collection(firestore, "books"), {
             name,
@@ -71,12 +66,23 @@ export const FirebaseProvider = (probs) => {
         });
     };
 
+    const listAllBooks = () => {
+        return getDocs(collection(firestore, "books"))
+    };
+
+    const getImageURL = (path) => {
+        return getDownloadURL(ref(storage, path));
+    };
+
+
     const isLoggedIn = user ? true : false;
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
         signinWithGoogle,
         handleCreateNewListing,
+        listAllBooks,
+        getImageURL,
         isLoggedIn
     }}>
         {probs.children}
