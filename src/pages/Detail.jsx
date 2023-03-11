@@ -4,10 +4,13 @@
  2. make a order page ViewOrder.jsx and add it ro our route in app.js
 */
 import Button from "react-bootstrap/Button";
+import Popup from "../components/Popup";
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form"
 import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
+
+
 
 const BookDetailPage = () => {
     const params = useParams();
@@ -16,6 +19,13 @@ const BookDetailPage = () => {
     const [qty, setQty] = useState(1);
     const [data, setData] = useState(null);
     const [url, setURL] = useState(null);
+
+    const [showText, setShowText] = useState(false);
+
+    function handleClick() {
+        setShowText(true);
+      }
+    
 
     console.log(data);
     useEffect(() => {
@@ -30,9 +40,15 @@ const BookDetailPage = () => {
     }, [data]);
 
     const placeOrder = async () => {
-        const result = await firebase.placeOrder(params.bookID, qty)
-        console.log("Order Placed", result);
+        if (qty > 0) {
+            const result = await firebase.placeOrder(params.bookID, qty)
+            console.log("Order Placed", result);
+        }
+        else if (qty < 0) {
+            setQty(1);
+        }
     };
+    
 
     if (data == null) return <h1>Loading...</h1>;
 
@@ -55,7 +71,8 @@ const BookDetailPage = () => {
                     placeholder="Enter Quantity"
                 />
             </Form.Group>
-            <Button onClick={placeOrder} variant="success">Buy Now</Button>
+            <Button onClick={() => {placeOrder(); handleClick();}} variant="success">Buy Now</Button>
+            {showText ? <p>Order Placed..!</p> : null}
         </div>
     );
 };

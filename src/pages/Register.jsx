@@ -11,6 +11,7 @@ const RegisterPage = () => {
     const firebase = useFirebase();
     const navigate = useNavigate();
 
+    const [displayName, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -32,6 +33,15 @@ const RegisterPage = () => {
    return (
         <div className="container mt-5">
             <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Display Name</Form.Label>
+                    <Form.Control
+                        onChange={(e) => setName(e.target.value)}
+                        value={displayName}
+                        type="text"
+                        placeholder="Enter your name"
+                    />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -58,6 +68,8 @@ const RegisterPage = () => {
                     Create Account
                 </Button>
             </Form>
+            <h1 className="m-3">OR</h1>
+            <Button onClick={firebase.signinWithGoogle} variant="danger">SignUp with Google</Button>
         </div>
     );
 };

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 //Components
 import MyNavbar from "./components/Navbar";
 
+
 //Pages
 import RegisterPage from "./pages/Register";
 import LoginPage from "./pages/Login";
