@@ -25,7 +25,7 @@ const navigate = useNavigate();
                     Seller: {props.displayName} <br />
                     Price: Rs.{props.price}
                 </Card.Text>
-                <Button onClick={e => navigate (`/book/view/${props.id}`)} 
+                <Button onClick={e => navigate (props.link)} 
                 variant="primary">View</Button>
             </Card.Body>
         </Card>

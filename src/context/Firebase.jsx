@@ -8,7 +8,17 @@ import {
     signInWithPopup,
     onAuthStateChanged
 } from "firebase/auth"
-import { getFirestore, collection, addDoc, getDocs, Firestore, doc,getDoc } from "firebase/firestore";
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    Firestore,
+    doc,
+    getDoc,
+    query,
+    where
+} from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const FirebaseContext = createContext(null);
@@ -80,6 +90,32 @@ export const FirebaseProvider = (probs) => {
         return getDownloadURL(ref(storage, path));
     };
 
+    const placeOrder = async (bookId, qty) => {
+        const collectionRef = collection(firestore, "books", bookId, "orders");
+        const result = await addDoc(collectionRef, {
+            userID: user.uid,
+            userEmail: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            qty: Number(qty),
+        });
+        return result;
+    };
+
+    const fetchMyBooks = async (userID) => {
+        // if(!user) return null; // error
+        const collectionRef = collection(firestore, "books");
+        const q = query(collectionRef, where("userID", "==", userID));
+
+        const result = await getDocs(q);
+        return result;
+    };
+
+    const getOrders = async (bookId) => {
+        const collectionRef = collection(firestore, "books", bookId, "orders");
+        const result= await getDocs(collectionRef);
+        return result;
+    };
 
     const isLoggedIn = user ? true : false;
 
@@ -90,7 +126,11 @@ export const FirebaseProvider = (probs) => {
         listAllBooks,
         getImageURL,
         getBookById,
-        isLoggedIn
+        placeOrder,
+        fetchMyBooks,
+        getOrders,
+        isLoggedIn,
+        user
     }}>
         {probs.children}
     </FirebaseContext.Provider>
