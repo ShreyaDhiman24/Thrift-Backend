@@ -1,3 +1,4 @@
+import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
@@ -28,6 +29,7 @@ const ViewOrderDetails = () => {
                             <h5>Ordered By: {data.displayName}</h5>
                             <h6>Quantity: {data.qty}</h6>
                             <p>Email: {data.userEmail}</p>
+                            <Button>Accept</Button>   <Button variant="danger">Reject</Button>
                         </div>
 
                     );
