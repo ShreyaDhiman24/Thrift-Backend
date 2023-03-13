@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { initializeApp } from 'firebase/app';
+import {getMessaging } from "firebase/messaging"
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -38,6 +39,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const firebaseAuth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
+export const messaging = getMessaging(firebaseApp);
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -116,6 +118,7 @@ export const FirebaseProvider = (probs) => {
         const result= await getDocs(collectionRef);
         return result;
     };
+
 
     const isLoggedIn = user ? true : false;
 

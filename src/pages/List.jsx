@@ -16,6 +16,7 @@ const ListingPage = () => {
     const handleSubmit = async(e) => {
 e.preventDefault();
 await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
+alert("Your listing has been created Successfully!")
     };
 
     return (
@@ -28,6 +29,7 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                         value={name}
                         type="text"
                         placeholder="Book name"
+                        required
                     />
                 </Form.Group>
 
@@ -38,6 +40,7 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                         value={isbnNumber}
                         type="text"
                         placeholder="ISBN Number"
+                        required
                     />
                 </Form.Group>
 
@@ -48,6 +51,7 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                         value={price}
                         type="number"
                         placeholder="Enter Price"
+                        required
                     />
                 </Form.Group>
 
@@ -56,6 +60,8 @@ await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
                     <Form.Control
                         onChange={(e) => setCoverPic(e.target.files[0])}
                         type="file"
+                        width="200" height="200"
+                        required
                     />
                 </Form.Group>
 

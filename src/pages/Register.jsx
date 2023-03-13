@@ -27,6 +27,7 @@ const RegisterPage = () => {
         console.log("signup a user...")
         const result = await firebase.signupUserWithWmailAndPassword(email, password);
          console.log("successfull", result);
+         alert("You are successfully registered!")
     };
 
     // console.log(firebase);  //for ispecting what we get from  the hook
@@ -40,6 +41,7 @@ const RegisterPage = () => {
                         value={displayName}
                         type="text"
                         placeholder="Enter your name"
+                        required
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,6 +51,7 @@ const RegisterPage = () => {
                         value={email}
                         type="email"
                         placeholder="Enter email"
+                        required
                     />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
@@ -62,6 +65,7 @@ const RegisterPage = () => {
                         value={password}
                         type="password"
                         placeholder="Password"
+                        required
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">

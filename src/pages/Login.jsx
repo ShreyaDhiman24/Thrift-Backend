@@ -27,6 +27,7 @@ const LoginPage = () => {
         console.log("login a user...")
         const result = await firebase.signinUserWithEmailAndPassword(email, password);
         console.log("successfull", result);
+        alert("LogIn Successful!")
     };
 
     return (
@@ -39,6 +40,7 @@ const LoginPage = () => {
                         value={email}
                         type="email"
                         placeholder="Enter email"
+                        required
                     />
                 </Form.Group>
 
@@ -49,6 +51,7 @@ const LoginPage = () => {
                         value={password}
                         type="password"
                         placeholder="Password"
+                        required
                     />
                 </Form.Group>
                 <Button variant="primary" type="submit">

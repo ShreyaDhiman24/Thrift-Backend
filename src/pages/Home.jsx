@@ -3,7 +3,6 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import { useFirebase } from "../context/Firebase";
 import BookCard from "../components/Card";
 
-
 const HomePage = () => {
     const firebase = useFirebase();
 
@@ -17,7 +16,7 @@ const HomePage = () => {
 
     return (
         <div className="container mt-5">
-            <CardGroup>
+            <CardGroup >
                 {books.map((book) => (
                     <BookCard
                         link={`/book/view/${book.id}`}

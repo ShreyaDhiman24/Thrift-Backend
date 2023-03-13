@@ -18,9 +18,7 @@ const OrdersPage = () => {
         <div>
             <CardGroup>
                 {
-
                     books.map(book => <BookCard link={`/books/orders/${book.id}`} key={book.id} id={book.id} {...book.data()} />)
-
                 }
             </CardGroup>
         </div>

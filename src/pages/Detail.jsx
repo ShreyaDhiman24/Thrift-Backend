@@ -4,7 +4,6 @@
  2. make a order page ViewOrder.jsx and add it ro our route in app.js
 */
 import Button from "react-bootstrap/Button";
-import Popup from "../components/Popup";
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form"
 import { useParams } from "react-router-dom";
@@ -24,6 +23,7 @@ const BookDetailPage = () => {
 
     function handleClick() {
         setShowText(true);
+        alert("Order Placed!")
       }
     
 
@@ -69,10 +69,10 @@ const BookDetailPage = () => {
                     value={qty}
                     type="number"
                     placeholder="Enter Quantity"
+                    required
                 />
             </Form.Group>
             <Button onClick={() => {placeOrder(); handleClick();}} variant="success">Buy Now</Button>
-            {showText ? <p>Order Placed..!</p> : null}
         </div>
     );
 };

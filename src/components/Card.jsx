@@ -7,7 +7,7 @@ import { useFirebase } from "../context/Firebase";
 
 const BookCard = (props) => {
     const firebase = useFirebase();
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const [url, setURL] = useState(null);
@@ -16,8 +16,8 @@ const navigate = useNavigate();
     }, []);
 
     return (
-        <Card style={{ width: '18rem' , margin: '25px', textAlign: 'center'}}>
-            <Card.Img variant="top" src={url}/>
+        <Card style={{ width: '18rem', margin: '25px', textAlign: 'center' }}>
+            <Card.Img variant="top" src={url} />
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
                 <Card.Text>
@@ -25,8 +25,8 @@ const navigate = useNavigate();
                     Seller: {props.displayName} <br />
                     Price: Rs.{props.price}
                 </Card.Text>
-                <Button onClick={e => navigate (props.link)} 
-                variant="primary">View</Button>
+                <Button onClick={e => navigate(props.link)}
+                    variant="primary">View</Button>
             </Card.Body>
         </Card>
     );
