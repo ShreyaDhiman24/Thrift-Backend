@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import CardGroup from 'react-bootstrap/CardGroup';
 import { useFirebase } from "../context/Firebase";
 import BookCard from "../components/Card";
+import '/home/shreya/Documents/Projects/BookifyFirebase/myapp/src/css/Home.css';
+
 
 const HomePage = () => {
     const firebase = useFirebase();
 
     const [books, setBooks] = useState([]);
+    
 
     useEffect(() => {
         firebase.listAllBooks().then((books) => setBooks(books.docs));
@@ -16,7 +19,7 @@ const HomePage = () => {
 
     return (
         <div className="container mt-5">
-            <CardGroup >
+            {/* <CardGroup > */}
                 {books.map((book) => (
                     <BookCard
                         link={`/book/view/${book.id}`}
@@ -25,7 +28,7 @@ const HomePage = () => {
                         {...book.data()}
                     />
                 ))}
-            </CardGroup>
+            {/* </CardGroup> */}
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { initializeApp } from 'firebase/app';
-import {getMessaging } from "firebase/messaging"
+
+import { getMessaging } from "firebase/messaging"
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -18,9 +19,13 @@ import {
     doc,
     getDoc,
     query,
-    where
+    where,
+    deleteDoc
 } from "firebase/firestore";
+
+
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
 
 const FirebaseContext = createContext(null);
 
@@ -40,12 +45,16 @@ const firebaseAuth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
 export const messaging = getMessaging(firebaseApp);
+const db = getFirestore(firebaseApp);
 
 const googleProvider = new GoogleAuthProvider();
+
+
 
 export const FirebaseProvider = (probs) => {
 
     const [user, setUser] = useState(null);
+    const [accept, setAccept] = useState(Boolean);
 
     useEffect(() => {
         onAuthStateChanged(firebaseAuth, user => {
@@ -115,12 +124,60 @@ export const FirebaseProvider = (probs) => {
 
     const getOrders = async (bookId) => {
         const collectionRef = collection(firestore, "books", bookId, "orders");
-        const result= await getDocs(collectionRef);
+        console.log(collectionRef);
+        const result = await getDocs(collectionRef);
         return result;
     };
 
+    const getOrderById = async (bookId, id) => {
+        const docRef = doc(firestore, "books", bookId, "orders", id);
+        console.log(docRef);
+        const result = await getDoc(docRef);
+        return result;
+    };
 
     const isLoggedIn = user ? true : false;
+
+    const SubCollection = () => {
+        const [workData, setworkData] =useState([])
+        //const {handleSignInWithGoogle, user} =useFirebase()
+        const db =getFirestore()
+
+        useEffect(() => {
+            if (!user) {
+                console.log("no user defined");
+            } else {
+                const getData = async () => 
+                {
+                    const db = getFirestore();
+                    const q = query(collection(db, `books`))
+                    const snapshot = await getDocs(q);
+                    const data = snapshot.docs.map((doc) => ({
+                        ...doc.data, id: doc.id
+                    }))
+                    data.map( async (elem) => {
+                        const workQ = query(collection(db, `books/${elem.id}/orders`))
+                        const workDetails = await getDocs(workQ)
+                        const orders = workDetails.docs.map((doc) => ({
+                            ...doc.data, id: doc.id
+                        }))
+                        console.log(orders);
+
+                        if (orders.length > 0) {
+                            // delete the first order for this book
+                            const orderToDelete = orders[0];
+                            await deleteDoc(doc(db, `books/${elem.id}/orders/${orderToDelete.id}`));
+                            console.log(`Deleted order ${orderToDelete.id} for book ${elem.id}`);
+                          }
+                          console.log(orders)
+                    })
+                }
+                getData();
+            }
+        }, [user])
+    }
+
+    
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
@@ -133,6 +190,7 @@ export const FirebaseProvider = (probs) => {
         fetchMyBooks,
         getOrders,
         isLoggedIn,
+        SubCollection,
         user
     }}>
         {probs.children}

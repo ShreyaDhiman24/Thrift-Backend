@@ -2,16 +2,25 @@ import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
+import Delete from "./Delete";
 
 const ViewOrderDetails = () => {
+    // const handleAcceptClick = () => {
+    //     // Call the SubCollection function here
+    //     firebase.SubCollection();
+    // }
+  
     const params = useParams();
     const firebase = useFirebase();
 
     const [orders, setOrders] = useState([]);
 
+
     useEffect(() => {
         firebase.getOrders(params.bookId)
             .then((orders => setOrders(orders.docs)));
+
+            console.log(params);
     }, []); // imports our orders
 
 
@@ -29,7 +38,7 @@ const ViewOrderDetails = () => {
                             <h5>Ordered By: {data.displayName}</h5>
                             <h6>Quantity: {data.qty}</h6>
                             <p>Email: {data.userEmail}</p>
-                            <Button>Accept</Button>   <Button variant="danger">Reject</Button>
+                            <Button onClick={Delete}>Accept</Button>   <Button variant="danger">Reject</Button>
                         </div>
 
                     );

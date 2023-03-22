@@ -1,8 +1,3 @@
-/*
-1. in navbar create button from where user can see orders which he/she is getting:
- <Nav.Link href="/book/orders">Orders</Nav.Link>
- 2. make a order page ViewOrder.jsx and add it ro our route in app.js
-*/
 import Button from "react-bootstrap/Button";
 import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form"
