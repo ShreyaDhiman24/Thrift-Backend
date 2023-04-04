@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useFirebase } from "../context/Firebase";
-// import { SubCollection } from './home/shreya/Documents/Projects/BookifyFirebase/myapp/src/context/Firebase.jsx/sub-collection'
+import { useContext } from 'react';
+import SubCollection from "../context/Firebase";
+
+
 
 const Delete = () => {
+    const { SubCollection } = useContext(SubCollection);
+    
     console.log("delete")
     const handleAcceptClick = () => {
       // Call the SubCollection function here
-        // SubCollection();                                                                                              
+         SubCollection();  
+         alert("Order Accepted")                                                                                            
     };
     return ({
-
         handleAcceptClick
     }
     )

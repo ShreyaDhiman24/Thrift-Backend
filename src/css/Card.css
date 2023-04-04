@@ -1,0 +1,22 @@
+.book-card {
+  width: 18rem;
+  margin: 25px;
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    width: 100%;
+    margin: 25px 0;
+  }
+}
+
+.card-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .card-img {
+    height: 150px;
+  }
+}

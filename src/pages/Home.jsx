@@ -5,6 +5,7 @@ import BookCard from "../components/Card";
 import '/home/shreya/Documents/Projects/BookifyFirebase/myapp/src/css/Home.css';
 
 
+
 const HomePage = () => {
     const firebase = useFirebase();
 
@@ -18,7 +19,9 @@ const HomePage = () => {
 
 
     return (
+       
         <div className="container mt-5">
+
             {/* <CardGroup > */}
                 {books.map((book) => (
                     <BookCard

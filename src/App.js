@@ -60,8 +60,6 @@ function App() {
         <Route path="/book/view/:bookID" element={<BookDetailPage />} />
         <Route path="/book/orders" element={<OrdersPage />} />
         <Route path="/books/orders/:bookId" element={<ViewOrderDetails />} />
-        
-
       </Routes>
     </div>
   );
