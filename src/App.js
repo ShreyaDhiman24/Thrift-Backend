@@ -6,6 +6,7 @@ import { getToken } from "firebase/messaging";
 
 //components
 import MyNavbar from "./components/Navbar";
+import ParticlesBackgroung from "./components/Stars";
 
 
 //Pages
@@ -20,6 +21,7 @@ import ViewOrderDetails from "./pages/ViewOrderDetail";
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+import sample from './sample.mp4';
 
 // hook
 import { useEffect } from "react";
@@ -51,6 +53,10 @@ function App() {
   return (
 
     <div>
+       <video autoPlay muted loop playsInline className="video-background">
+      <source src={sample} type="video/mp4" />
+    </video>
+      {/* <ParticlesBackgroung/> */}
       <MyNavbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

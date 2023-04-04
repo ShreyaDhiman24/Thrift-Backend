@@ -9,7 +9,7 @@ const ViewOrderDetails = () => {
     //     // Call the SubCollection function here
     //     firebase.SubCollection();
     // }
-  
+
     const params = useParams();
     const firebase = useFirebase();
 
@@ -20,30 +20,32 @@ const ViewOrderDetails = () => {
         firebase.getOrders(params.bookId)
             .then((orders => setOrders(orders.docs)));
 
-            console.log(params);
+        console.log(params);
     }, []); // imports our orders
 
 
 
     return (
-        <div
-            className="container mt-2">
-            <h1>Orders</h1>
-            {
-                orders.map((order) => {
-                    const data = order.data();
-                    return (
-                        <div key={order.id}
-                            className="mt-5" style={{ border: "1px solid", padding: "10px" }}>
-                            <h5>Ordered By: {data.displayName}</h5>
-                            <h6>Quantity: {data.qty}</h6>
-                            <p>Email: {data.userEmail}</p>
-                            <Button onClick={Delete}>Accept</Button>   <Button variant="danger">Reject</Button>
-                        </div>
+        <div className="bg-muted">
+            <div
+                className="container mt-2 text-light">
+                <h1>Orders</h1>
+                {
+                    orders.map((order) => {
+                        const data = order.data();
+                        return (
+                            <div key={order.id}
+                                className="mt-5" style={{ border: "1px solid", padding: "10px" }}>
+                                <h5>Ordered By: {data.displayName}</h5>
+                                <h6>Quantity: {data.qty}</h6>
+                                <p>Email: {data.userEmail}</p>
+                                <Button onClick={Delete}>Accept</Button>   <Button variant="danger">Reject</Button>
+                            </div>
 
-                    );
-                })
-            }
+                        );
+                    })
+                }
+            </div>
         </div>
     );
 };

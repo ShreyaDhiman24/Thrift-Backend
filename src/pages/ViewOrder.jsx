@@ -13,9 +13,9 @@ const OrdersPage = () => {
     }, [firebase]);
 
     console.log(books)
-    if (!firebase.isLoggedIn) return <h1>Please wait OR LogIn if not...!</h1>
+    if (!firebase.isLoggedIn) return <h1 className="text-light">Please wait OR LogIn if not...!</h1>
     return (
-        <div>
+        <div className="text-light">
             {/* <CardGroup> */}
                 {
                     books.map(book => <BookCard link={`/books/orders/${book.id}`} key={book.id} id={book.id} {...book.data()} />)

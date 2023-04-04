@@ -32,7 +32,7 @@ const RegisterPage = () => {
 
     // console.log(firebase);  //for ispecting what we get from  the hook
    return (
-        <div className="container mt-5">
+        <div className="container mt-5 text-light">
             <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Display Name</Form.Label>

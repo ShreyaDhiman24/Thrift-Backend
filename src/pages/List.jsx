@@ -20,10 +20,10 @@ alert("Your listing has been created Successfully!")
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5 text-light">
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Enter Book Name</Form.Label>
+                    <Form.Label className="text-light">Enter Book Name</Form.Label>
                     <Form.Control
                         onChange={(e) => setName(e.target.value)}
                         value={name}
