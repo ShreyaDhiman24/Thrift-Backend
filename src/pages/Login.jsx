@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 //hook
 import { useFirebase } from "../context/Firebase";
+import '../css/Button.css';
 
 const LoginPage = () => {
     const firebase = useFirebase();
@@ -31,7 +32,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="container mt-5 text-light">
+        <div className="container mt-5">
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -54,12 +55,12 @@ const LoginPage = () => {
                         required
                     />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <button variant="primary" type="submit" class="button-71" role="button">
                     Login
-                </Button>
+                </button>
             </Form>
             <h1 className="m-3">OR</h1>
-            <Button onClick={firebase.signinWithGoogle} variant="danger">SignIn with Google</Button>
+            <button onClick={firebase.signinWithGoogle} variant="danger" class="button-71" role="button">SignIn with Google</button>
         </div>
     );
 };

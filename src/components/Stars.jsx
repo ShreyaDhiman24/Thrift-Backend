@@ -3,7 +3,8 @@ import particlesConfig from "./config/particles-config";
 
 const ParticlesBackgroung = () => {
     return (
-        <Particles params={particlesConfig}>
+        <Particles 
+        params={particlesConfig}>
         </Particles>
 
     )

@@ -3,15 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
 import Delete from "./Delete";
+import '../css/Button.css';
 
 const ViewOrderDetails = () => {
-    // const handleAcceptClick = () => {
-    //     // Call the SubCollection function here
-    //     firebase.SubCollection();
-    // }
-
+    
     const params = useParams();
     const firebase = useFirebase();
+    const handleAcceptClick = () => {
+        // Call the SubCollection function here
+        firebase.SubCollection();
+    }
 
     const [orders, setOrders] = useState([]);
 
@@ -39,7 +40,7 @@ const ViewOrderDetails = () => {
                                 <h5>Ordered By: {data.displayName}</h5>
                                 <h6>Quantity: {data.qty}</h6>
                                 <p>Email: {data.userEmail}</p>
-                                <Button onClick={Delete}>Accept</Button>   <Button variant="danger">Reject</Button>
+                                <button class="button-71" role="button" onClick={handleAcceptClick}>Accept</button>   <button class="button-71" role="button" variant="danger">Reject</button>
                             </div>
 
                         );

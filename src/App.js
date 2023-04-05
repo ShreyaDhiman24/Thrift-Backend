@@ -3,11 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { messaging } from "./context/Firebase";
 import { getToken } from "firebase/messaging";
 
-
 //components
 import MyNavbar from "./components/Navbar";
-import ParticlesBackgroung from "./components/Stars";
-
 
 //Pages
 import RegisterPage from "./pages/Register";
@@ -21,7 +18,9 @@ import ViewOrderDetails from "./pages/ViewOrderDetail";
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
-import sample from './sample.mp4';
+import sample from './sample2.mp4';
+import backgroundImage from './bg_img2.jpg';
+
 
 // hook
 import { useEffect } from "react";
@@ -51,11 +50,12 @@ function App() {
 
 
   return (
-
-    <div>
+<div>
+    {/* //  <div style={{backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center'}}> */}
        <video autoPlay muted loop playsInline className="video-background">
       <source src={sample} type="video/mp4" />
     </video>
+
       {/* <ParticlesBackgroung/> */}
       <MyNavbar />
       <Routes>

@@ -2,14 +2,15 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import '../css/Navbar.css';
 
 const MyNavbar = () => {
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="muted" variant="black" className="glassmorphism">
             <Container className="d-flex justify-content-between">
                 <div className="d-flex justify-content-between">
-                    <img src="thrift.png" alt='logo' className='w-9 h-9 object-contain' />
-                    <Navbar.Brand href="#home" className="mx-2">Thrift</Navbar.Brand>
+                    <img id="logo" src="thrift.png" alt='logo' className='w-10 h-10 object-contain' />
+                    <Navbar.Brand href="#home" className="mx-2 "><strong>Thrift</strong></Navbar.Brand>
                 </div>
                 <Nav>
                     <Nav.Link href="/" className="mx-3">Home</Nav.Link>

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useNavigation } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { ChakraProvider, Skeleton, SkeletonText } from "@chakra-ui/react";
+import '../css/Card.css';
 
 
 import { useFirebase } from "../context/Firebase";
@@ -18,19 +19,22 @@ const BookCard = (props) => {
     }, []);
 
     return (
-        <Card style={{ width: '18rem', margin: '25px', textAlign: 'center' }}>
+        <ChakraProvider>
+        <card id="card" className="glassmorphism-card" style={{ width: '18rem', margin: '25px', textAlign: 'center' }}>
             <Card.Img variant="top" src={url} />
-            <Card.Body>
-                <Card.Title>{props.name}</Card.Title>
-                <Card.Text>
+            <Card.Body >
+                <br></br>
+                <Card.Title><strong>{props.name}</strong></Card.Title>
+                <div className="text_inside">
                     Title: {props.name} <br />
                     Seller: {props.displayName} <br />
                     Price: Rs.{props.price}
-                </Card.Text>
-                <Button onClick={e => navigate(props.link)}
-                    variant="primary">View</Button>
+                </div>
+                <button onClick={e => navigate(props.link)}
+                    variant="primary" class="button-71" role="button">View</button>
             </Card.Body>
-        </Card>
+        </card>
+        </ChakraProvider>
     );
 };
 export default BookCard;

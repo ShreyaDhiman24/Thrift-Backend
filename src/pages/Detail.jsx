@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form"
 import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
+import '../css/Details.css';
 
 
 
@@ -48,9 +49,10 @@ const BookDetailPage = () => {
     if (data == null) return <h1>Loading...</h1>;
 
     return (
-        <div className="container mt-5">
+        <div id="details">
+        <div className="flex justify-center items-center"><img src={url} width="50%" style={{ borderRadius: "10px" }} /></div>
+        <div className="container mt-5 " >
             <h1>{data.name}</h1>
-            <img src={url} width="50%" style={{ borderRadius: "10px" }} />
             <h3>Details:</h3>
             <p>Price: Rs.{data.price}</p>
             <p>ISBN Number: {data.isbn}</p>
@@ -67,7 +69,8 @@ const BookDetailPage = () => {
                     required
                 />
             </Form.Group>
-            <Button onClick={() => {placeOrder(); handleClick();}} variant="success">Buy Now</Button>
+            <button onClick={() => {placeOrder(); handleClick();}} class="button-71" role="button" variant="success">Buy Now</button>
+        </div>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useFirebase } from "../context/Firebase";
-
+import '../css/Button.css';
 
 const ListingPage = () => {
 
@@ -20,10 +20,10 @@ alert("Your listing has been created Successfully!")
     };
 
     return (
-        <div className="container mt-5 text-light">
+        <div className="container mt-5 ">
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className="text-light">Enter Book Name</Form.Label>
+                    <Form.Label>Enter Book Name</Form.Label>
                     <Form.Control
                         onChange={(e) => setName(e.target.value)}
                         value={name}
@@ -65,9 +65,9 @@ alert("Your listing has been created Successfully!")
                     />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <button class="button-71" role="button" variant="primary" type="submit">
                     Create
-                </Button>
+                </button>
             </Form>
         </div>
     );
