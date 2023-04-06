@@ -1,0 +1,54 @@
+#main{
+    box-shadow: h-shadow v-shadow blur spread color inset;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-container button {
+    margin: 0 1rem;
+    flex: 1;
+  }
+  
+  @media (max-width: 640px) {
+    .button-container {
+      flex-wrap: wrap;
+    }
+    
+    .button-container button {
+      margin: 0.5rem;
+      flex-basis: 100%;
+    }
+  }
+  
+  /* Styles for Donate Now button */
+ .donate-now-button {
+    background-color: #A3C48D;
+    color: #1D4E34;
+  }
+  .donate-now-button a {
+    color: inherit;
+  }
+  
+  
+.donate-now-button:hover {
+    background-color: #8CB47E;
+    color: #fff;
+  }
+  
+  /* Styles for Donate to NGO button */
+  .donate-to-ngo-button {
+    border: 4px solid #155D18;
+    color: #1D4E34;
+  }
+  
+  .donate-to-ngo-button:hover {
+    background-color: #155D18;
+    color: #A3C48D;
+  }
+  
+  

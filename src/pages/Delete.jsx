@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useFirebase } from "../context/Firebase";
-import { useContext } from 'react';
-import { SubCollection } from "../context/Firebase";
 
+const Delete = ({ orderId }) => {
+    const firebase = useFirebase();
 
-
-const Delete = () => {
-    const { SubCollection } = useContext(SubCollection);
-
-    console.log("delete")
-    const handleAcceptClick = () => {
-        // Call the SubCollection function here
-        SubCollection();
-        alert("Order Accepted")
+    const handleDeleteClick = () => {
+        firebase.deleteOrder(orderId)
+            .then(() => console.log("Order deleted successfully"))
+            .catch((error) => console.log(error));
     };
-    return ({
-        handleAcceptClick
-    }
-    )
-}
+
+    return (
+        <button className="button-71" role="button" variant="danger" onClick={handleDeleteClick}>
+            Delete
+        </button>
+    );
+};
+
 export default Delete;

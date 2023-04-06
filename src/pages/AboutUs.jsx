@@ -1,5 +1,4 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
 import '../css/AboutUs.css';
 import '../assets/1.png';
 import '../assets/3.png';
@@ -8,10 +7,10 @@ const  AboutUs = () => {
     return (
         <div>
         <div class="main-page page">
-        <section class="main-page-content">
+        <section id="section" class="main-page-content">
           <h1>About Us</h1>
           <h2 id="quote">
-            "Always give without remembering and always receive without
+          "Always give without remembering and always receive without
             forgetting."
           </h2>
           <br /><br />

@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useFirebase } from "../context/Firebase";
 import '../css/Button.css';
+import '../css/Glassmorphism.css';
 
 const ListingPage = () => {
 
@@ -20,6 +21,12 @@ alert("Your listing has been created Successfully!")
     };
 
     return (
+        <>
+        <div className="glass-container"> 
+        <div className="container">
+  <h1 className="heading">List Your Book</h1>
+</div>
+
         <div className="container mt-5 ">
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -50,7 +57,7 @@ alert("Your listing has been created Successfully!")
                         onChange={(e) => setPrice(e.target.value)}
                         value={price}
                         type="number"
-                        placeholder="Enter Price"
+                        placeholder="Enter Price (For Donation: Set Price= Rs.0)"
                         required
                     />
                 </Form.Group>
@@ -70,6 +77,8 @@ alert("Your listing has been created Successfully!")
                 </button>
             </Form>
         </div>
+        </div>
+        </>
     );
 };
 

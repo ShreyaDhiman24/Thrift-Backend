@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CardGroup from 'react-bootstrap/CardGroup';
 import { useFirebase } from "../context/Firebase";
 import BookCard from "../components/Card";
 import '/home/shreya/Documents/Projects/BookifyFirebase/myapp/src/css/Home.css';
@@ -7,10 +6,11 @@ import '/home/shreya/Documents/Projects/BookifyFirebase/myapp/src/css/Home.css';
 import '../css/Card.css';
 import '../pages/Login.jsx';
 import AboutUs from "../pages/AboutUs.jsx";
+import Main from "../pages/Main.jsx";
 
 
 
-const HomePage = () => {
+const   HomePage = () => {
     const firebase = useFirebase();
 
     const [books, setBooks] = useState([]);
@@ -21,12 +21,6 @@ const HomePage = () => {
 
     return (
         <div className="container mt-5">
-            <div className="margin-10px">
-                <AboutUs />
-            </div>
-            <br></br>
-            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
             <div className="card-group-container">
 
                 {books.map((book) => (
@@ -38,9 +32,6 @@ const HomePage = () => {
                     />
                 ))}
 
-            </div>
-            <div>
-                contact info and review page
             </div>
         </div>
     );
