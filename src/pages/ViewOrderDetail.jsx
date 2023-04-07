@@ -5,15 +5,26 @@ import { useFirebase } from "../context/Firebase";
 import Delete from "./Delete";
 import '../css/Button.css';
 
+const Order = ({ order, handleAcceptClick }) => {
+    const data = order.data();
+    return (
+        <div className="col-md-3 col-sm-6 mb-4">
+            <div style={{ border: "1px solid", padding: "10px", color: "black" }} className="mx-2">
+                <h5> <strong>Ordered By: {data.displayName}</strong></h5>
+                <h6>Quantity: {data.qty}</h6>
+                <p>Email: {data.userEmail}</p>
+
+                <button className="button-71 mr-2" role="button" onClick={handleAcceptClick}>Accept</button>
+                <Delete orderId={order.id} id="delete-button" />
+            </div>
+        </div>
+    );
+};
+
 const ViewOrderDetails = () => {
 
     const params = useParams();
     const firebase = useFirebase();
-    const handleAcceptClick = () => {
-        // Call the SubCollection function here
-        firebase.SubCollection();
-    }
-
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -23,27 +34,22 @@ const ViewOrderDetails = () => {
         console.log(params);
     }, []); // imports our orders
 
+    const handleAcceptClick = () => {
+        // Call the SubCollection function here
+        firebase.SubCollection();
+    }
+
     return (
         <div className="bg-muted">
             <div className="container mt-2 text-light">
-                <hr class="black-hr"></hr>
-                <h1 >Orders</h1>
-                <hr class="black-hr"></hr>
-                {
-                    orders.map((order) => {
-                        const data = order.data();
-                        return (
-                            <div key={order.id} className="mt-5" style={{ border: "1px solid", padding: "10px", color: "black" }}>
-                                <h5> <strong>Ordered By: {data.displayName}</strong></h5>
-                                <h6>Quantity: {data.qty}</h6>
-                                <p>Email: {data.userEmail}</p>
-
-                                <button className="button-71 mr-2" role="button" onClick={handleAcceptClick}>Accept</button>
-                                <Delete orderId={order.id} id="delete-button" />
-                            </div>
-                        );
-                    })
-                }
+                <hr className="black-hr" />
+                <h1>Orders</h1>
+                <hr className="black-hr" />
+                <div className="row">
+                    {orders.map((order, index) => {
+                        return <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
+                    })}
+                </div>
             </div>
         </div>
     );

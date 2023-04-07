@@ -51,4 +51,19 @@
     color: #A3C48D;
   }
   
-  
+  #mainheading{
+    display: inline;
+    align-items: start;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: perspective(50px) rotateY(5deg);
+  }
+  #mainheading:hover {
+    text-shadow: 2px 2px 1px #e29fc6;
+    transform: translateZ(10px);
+  }
+  #Donate{
+    width: 345px;
+  }
+  #Donate2{
+    width: 345px;
+  }

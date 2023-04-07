@@ -2,13 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useFirebase } from "../context/Firebase";
 import BookCard from "../components/Card";
 import '../css/Home.css';
-// import backgroundImage from '../T.png';
 import '../css/Card.css';
 import '../pages/Login.jsx';
-import AboutUs from "./ProjectDetail.jsx";
-import Main from "../pages/Main.jsx";
-
-
 
 const   HomePage = () => {
     const firebase = useFirebase();

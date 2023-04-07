@@ -22,7 +22,7 @@ const Main = () => {
       <div id="main" className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 relative z-20">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
-            <h1 className=" -mt-14 sm:-mt-0 text-4xl font-rokkitt font-extrabold tracking-tight text-gray-900 sm:text-6xl relative z-20 leading-[50px]">
+            <h1 id="mainheading" className=" lg-mt-14 sm:-mt-0 text-4xl font-rokkitt font-extrabold tracking-tight text-gray-900 sm:text-6xl relative z-20 leading-[50px]">
             Donate and sell
             your Old books
             </h1>
@@ -31,7 +31,7 @@ const Main = () => {
             forgetting."</strong><br></br>
             Thrift is a humanitarian effort dedicated to promoting literacy by
             offering "FREE OLD BOOKS" to learners as well as other daily
-            necessities that are expensive.
+            necessities that are expensive.
             </p>
           </div>
           <div>
@@ -102,12 +102,12 @@ const Main = () => {
                 </div>
               </div>
         
-  <button className="donate-now-button w-full xs:w-auto inline-block text-center font-bold text-xl bg-skin-lightGreen border border-transparent rounded-md py-3 px-10 text-skin-darkGreen hover:bg-skin-hoverGreen transition-all">
+  <button id="Donate" className="donate-now-button w-full xs:w-auto inline-block text-center font-bold text-xl bg-skin-lightGreen border border-transparent rounded-md py-3 px-10 text-skin-darkGreen hover:bg-skin-hoverGreen transition-all">
     <Link to="/book/list" className="text-skin-darkGreen">
       <strong>Donate Now</strong>
     </Link>
   </button>
-  <button className="donate-to-ngo-button block mt-5 px-[5.4rem] text-center font-bold text-xl border-4 border-[#155D18] rounded-md py-3 text-skin-darkGreen hover:bg-[#155D18] hover:text-skin-lightGreen transition-all">
+  <button id="Donate2" className="donate-to-ngo-button block mt-5 px-[5.4rem] text-center font-bold text-xl border-4 border-[#155D18] rounded-md py-3 text-skin-darkGreen hover:bg-[#155D18] hover:text-skin-lightGreen transition-all">
     Donate to NGO
   </button>
 

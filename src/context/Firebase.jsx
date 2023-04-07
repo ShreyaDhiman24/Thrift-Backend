@@ -74,17 +74,17 @@ export const FirebaseProvider = (probs) => {
     const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider)
 
     const signOut = () => {
-        const auth = getAuth();
-        signOut(auth)
-          .then(() => {
-            setUser(null);
-            alert("Sign-out successful!");
-          })
-          .catch((error) => {
-            alert("Error!");
-          });
-      };
-    
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        setUser(null);
+        alert("Sign-out successful!");
+      })
+      .catch((error) => {
+        alert("Error!");
+      });
+  };
+
 
     const handleCreateNewListing = async (name, isbn, price, coverPic) => {
         const imageRef = ref(storage, `uploads/images/${Date.now()}-${coverPic.name}`)
