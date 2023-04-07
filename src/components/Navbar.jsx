@@ -14,11 +14,11 @@ const MyNavbar = () => {
                 <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                     <Nav style={{ fontSize: '20px', fontWeight: 'bold' }}>
                         <Nav.Link href="/" className="mx-3">Home</Nav.Link>
-                        <Nav.Link href="/book/list" className="mx-3">Add Listing</Nav.Link>
+                        {/* <Nav.Link href="/book/list" className="mx-3">Add Listing</Nav.Link> */}
                         <Nav.Link href="/book/orders" className="mx-3">Orders</Nav.Link>
                         <Nav.Link href="/login" className="mx-3">Login</Nav.Link>
                         <Nav.Link href="/register" className="mx-3">Register</Nav.Link>
-                        {/* <Nav.Link href="/logout">Log Out</Nav.Link> */}
+                        <Nav.Link href="/logout">Log Out</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

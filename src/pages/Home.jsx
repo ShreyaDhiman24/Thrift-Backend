@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useFirebase } from "../context/Firebase";
 import BookCard from "../components/Card";
-import '/home/shreya/Documents/Projects/BookifyFirebase/myapp/src/css/Home.css';
+import '../css/Home.css';
 // import backgroundImage from '../T.png';
 import '../css/Card.css';
 import '../pages/Login.jsx';
-import AboutUs from "../pages/AboutUs.jsx";
+import AboutUs from "./ProjectDetail.jsx";
 import Main from "../pages/Main.jsx";
 
 

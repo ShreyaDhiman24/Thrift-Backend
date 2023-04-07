@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 //hook
 import { useFirebase } from "../context/Firebase";
 import '../css/Button.css';
+import '../css/Logout.css';
 
 const RegisterPage = () => {
     const firebase = useFirebase();
@@ -34,7 +35,7 @@ const RegisterPage = () => {
 
     // console.log(firebase);  //for ispecting what we get from  the hook
    return (
-        <div className="container mt-5">
+        <div id="form" className="container mt-5">
             <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Display Name</Form.Label>
@@ -70,12 +71,14 @@ const RegisterPage = () => {
                         required
                     />
                 </Form.Group>
+                <div id="button-group">
                 <button class="button-71" role="button" variant="primary" type="submit" >
                     Create Account
                 </button>
-            </Form>
             <h1 className="m-3">OR</h1>
             <button onClick={firebase.signinWithGoogle} variant="danger" class="button-71" role="button">SignUp with Google</button>
+            </div>
+            </Form>
         </div>
     );
 };

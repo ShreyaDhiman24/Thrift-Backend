@@ -15,8 +15,9 @@ import BookDetailPage from "./pages/Detail";
 import OrdersPage from "./pages/ViewOrder";
 import ViewOrderDetails from "./pages/ViewOrderDetail";
 import Main from "./pages/Main";
-import AboutUs from "./pages/AboutUs";
 import Footer from './pages/Footer';
+import LogoutPage from "./pages/LogOut";
+import ProjectDetail from "./pages/ProjectDetail";
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -64,7 +65,8 @@ function App() {
         <Route path="/book/view/:bookID" element={<BookDetailPage />} />
         <Route path="/book/orders" element={<OrdersPage />} />
         <Route path="/books/orders/:bookId" element={<ViewOrderDetails />} />
-        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/logout" element={<LogoutPage />} />
+        <Route path="/projectdetails" element={<ProjectDetail />} />
       </Routes>
     </div>
   );

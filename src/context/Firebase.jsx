@@ -8,8 +8,10 @@ import {
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
-    onAuthStateChanged
+    onAuthStateChanged,
+    signOut
 } from "firebase/auth"
+
 import {
     getFirestore,
     collection,
@@ -71,6 +73,18 @@ export const FirebaseProvider = (probs) => {
 
     const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider)
 
+    const signOut = () => {
+        const auth = getAuth();
+        signOut(auth)
+          .then(() => {
+            setUser(null);
+            alert("Sign-out successful!");
+          })
+          .catch((error) => {
+            alert("Error!");
+          });
+      };
+    
 
     const handleCreateNewListing = async (name, isbn, price, coverPic) => {
         const imageRef = ref(storage, `uploads/images/${Date.now()}-${coverPic.name}`)
@@ -191,7 +205,8 @@ export const FirebaseProvider = (probs) => {
         getOrders,
         isLoggedIn,
         SubCollection,
-        user
+        user,
+        signOut
     }}>
         {probs.children}
     </FirebaseContext.Provider>

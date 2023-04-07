@@ -26,10 +26,7 @@ const Footer = () => {
                 <div className="m-auto text-center md:text-left my-7">
                 <div>
   <h2 className="text-xl font-bold mb-2">Know Us</h2>
-  <Link href="/aboutUs">
-    <a className="py-2 hover:underline transition-all">About</a>
-  </Link>
-  <Link href="/projectdetails">
+  <Link to="/projectdetails">
     <a className="block py-2 hover:underline transition-all">Project Details</a>
   </Link>
 </div>
@@ -41,7 +38,7 @@ const Footer = () => {
 `}</style>
 
                     <div>
-                        <h2 className="text-xl font-bold mb-2">Social Media</h2>
+                        <h2 className="text-xl font-bold mb-2">About Us</h2>
                         <a href="https://www.linkedin.com/in/shreya-dhiman-25a753247/" target="_blank">
                             <div>
                                 <svg class="inline" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

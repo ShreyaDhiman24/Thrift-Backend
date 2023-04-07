@@ -26,7 +26,9 @@ const ViewOrderDetails = () => {
     return (
         <div className="bg-muted">
             <div className="container mt-2 text-light">
-                <h1>Orders</h1>
+                <hr class="black-hr"></hr>
+                <h1 >Orders</h1>
+                <hr class="black-hr"></hr>
                 {
                     orders.map((order) => {
                         const data = order.data();

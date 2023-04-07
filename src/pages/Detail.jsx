@@ -50,7 +50,7 @@ const BookDetailPage = () => {
 
     return (
         <div id="details">
-        <div className="flex justify-center items-center"><img src={url} width="50%" style={{ borderRadius: "10px" }} /></div>
+        <div className="container mt-5 flex justify-center items-center"><img src={url} width="50%" style={{ borderRadius: "10px" }} /></div>
         <div className="container mt-5 " >
             <h1>{data.name}</h1>
             <h3>Details:</h3>
