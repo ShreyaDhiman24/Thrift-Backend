@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useNavigation } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 import Card from 'react-bootstrap/Card';
-import { ChakraProvider, Skeleton, SkeletonText } from "@chakra-ui/react";
+import { ChakraProvider} from "@chakra-ui/react";
 import '../css/Card.css';
 
 
