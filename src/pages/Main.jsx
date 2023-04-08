@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 import '../css/Main.css';
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ const Main = () => {
     return (
         <>
         <div className="absolute z-10 right-0 hidden lg:block">
-        <img src="/Vector3.png" alt="vector image" className='backgroundSize-cover background-position-center' />
+        <img src="/Vector3.png" alt="vectorimage" className='backgroundSize-cover background-position-center' />
         </div>
         <div className="relative bg-white overflow-hidden">
       <div id="main" className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48 relative z-20">
@@ -108,7 +108,9 @@ const Main = () => {
     </Link>
   </button>
   <button id="Donate2" className="donate-to-ngo-button block mt-5 px-[5.4rem] text-center font-bold text-xl border-4 border-[#155D18] rounded-md py-3 text-skin-darkGreen hover:bg-[#155D18] hover:text-skin-lightGreen transition-all">
+  <Link to="/geolocation" className="text-skin-darkGreen">
     Donate to NGO
+    </Link>
   </button>
 
               

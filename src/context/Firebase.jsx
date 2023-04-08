@@ -189,7 +189,7 @@ export const FirebaseProvider = (probs) => {
                 getData();
             }
         }, [user])
-    }
+    };
 
     
 

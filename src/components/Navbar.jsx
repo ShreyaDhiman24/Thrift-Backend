@@ -18,7 +18,7 @@ const MyNavbar = () => {
                         <Nav.Link href="/book/orders" className="mx-3">Orders</Nav.Link>
                         <Nav.Link href="/login" className="mx-3">Login</Nav.Link>
                         <Nav.Link href="/register" className="mx-3">Register</Nav.Link>
-                        <Nav.Link href="/logout">Log Out</Nav.Link>
+                        <Nav.Link href="/logout" className="mx-3">Log Out</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -18,6 +18,7 @@ import Main from "./pages/Main";
 import Footer from './pages/Footer';
 import LogoutPage from "./pages/LogOut";
 import ProjectDetail from "./pages/ProjectDetail";
+import Geolocation from "./pages/Geolocation";
 
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -67,6 +68,7 @@ function App() {
         <Route path="/books/orders/:bookId" element={<ViewOrderDetails />} />
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/projectdetails" element={<ProjectDetail />} />
+        <Route path="/geolocation" element={<Geolocation />} />
       </Routes>
     </div>
   );

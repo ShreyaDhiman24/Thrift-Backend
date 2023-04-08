@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/ProjectDetail.css";
 
 const ProjectDetail = () => {
   return (
-    <div fluid className="container bg-glassmorphism">
+    <div className="container bg-glassmorphism">
       <h1><strong>Project Details</strong></h1>
       <div className="lg ">
         <div className="lg:ml-[calc(300px+4vw)] w-11/12 mx-auto lg:text-left">
@@ -25,7 +26,7 @@ const ProjectDetail = () => {
             How it Works
             <hr></hr>
           </h2>
-          <ul class="marker:text-sky-400 list-disc pl-5 space-y-1 text-black-600 text-lg flex justify-self-auto flex-col sm:flex-row ">
+          <ul className="marker:text-sky-400 list-disc pl-5 space-y-1 text-black-600 text-lg flex justify-self-auto flex-col sm:flex-row ">
             <div>
               <li className="my-0">Donate button: Redirects you to the Add Listing page where you can add details about the books you're donating or selling.
               </li>
@@ -41,19 +42,14 @@ const ProjectDetail = () => {
             <hr></hr>
             <h2 className="text-2xl font-semibold ">Technologies Used:</h2>
             <hr></hr>
-            <ul class="marker:text-sky-400 list-disc pl-5 space-y-3 text-black-600  text-lg w-[300px] cursor-pointer">
-              <a href="https://legacy.reactjs.org/" target="_blank">
-                <li className="my-2">Frontend: React.js</li>
-              </a>
-              <a href="https://firebase.google.com/" target="_blank">
-                <li className="my-2">Backend: Firebase</li>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-              >
-                <li className="my-2 text-black-600">Google Geolocation API</li>
-              </a>
+            <ul className="marker:text-sky-400 list-disc pl-5 space-y-3 text-black-600  text-lg w-[300px] cursor-pointer">
+
+              <li className="my-2"><a href="https://legacy.reactjs.org/" target="_blank" rel="noreferrer">Frontend: React.js </a></li>
+
+              <li className="my-2"> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">Backend: Firebase</a></li>
+
+              <li className="my-2 text-black-600">
+                <Link to="/geolocaton" className="text-black-600">Google Geolocation API</Link></li>
             </ul>
           </div>
 

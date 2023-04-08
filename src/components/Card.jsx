@@ -14,12 +14,15 @@ const BookCard = (props) => {
 
     const [url, setURL] = useState(null);
     useEffect(() => {
-        firebase.getImageURL(props.imageURL).then(url => setURL(url));
+        firebase.getImageURL(props.imageURL).then((url) => setURL(url));
     }, []);
 
+    // console.log(props);
+
     return (
+
         <ChakraProvider>
-        <card id="card" className="glassmorphism-card" style={{ width: '18rem', margin: '25px', textAlign: 'center' }}>
+        <div id="card" className="glassmorphism-card" style={{ width: '18rem', margin: '25px', textAlign: 'center' }}>
             <Card.Img variant="top" src={url} />
             <Card.Body >
                 <br></br>
@@ -32,8 +35,10 @@ const BookCard = (props) => {
                 <button onClick={e => navigate(props.link)}
                     variant="primary" class="button-71" role="button">View</button>
             </Card.Body>
-        </card>
+           
+        </div>
         </ChakraProvider>
+       
     );
 };
 export default BookCard;

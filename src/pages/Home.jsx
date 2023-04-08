@@ -5,7 +5,7 @@ import '../css/Home.css';
 import '../css/Card.css';
 import '../pages/Login.jsx';
 
-const   HomePage = () => {
+const HomePage = () => {
     const firebase = useFirebase();
 
     const [books, setBooks] = useState([]);
