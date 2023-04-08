@@ -35,8 +35,9 @@ const ViewOrderDetails = () => {
     }, []); // imports our orders
 
     const handleAcceptClick = () => {
+        alert('hjhj')
         // Call the SubCollection function here
-        firebase.SubCollection();
+        useFirebase.SubCollection();
     }
 
     return (
@@ -47,7 +48,7 @@ const ViewOrderDetails = () => {
                 <hr className="black-hr" />
                 <div className="row">
                     {orders.map((order, index) => {
-                        return <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
+                         return <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
                     })}
                 </div>
             </div>

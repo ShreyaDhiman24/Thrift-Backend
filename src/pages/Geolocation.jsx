@@ -10,7 +10,6 @@ const Geolocation = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

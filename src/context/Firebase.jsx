@@ -73,17 +73,18 @@ export const FirebaseProvider = (probs) => {
 
     const signinWithGoogle = () => signInWithPopup(firebaseAuth, googleProvider)
 
-    const signOut = () => {
-    const auth = getAuth();
-    signOut(auth)
-      .then(() => {
-        setUser(null);
-        alert("Sign-out successful!");
-      })
-      .catch((error) => {
-        alert("Error!");
-      });
-  };
+    const signout = () => {
+       // alert("Sign-out successful!");
+       const auth = getAuth();
+       signOut(auth).then(() => {
+         // Sign-out successful.
+       }).catch((error) => {
+         // An error happened.
+       });
+       
+    };
+
+
 
 
     const handleCreateNewListing = async (name, isbn, price, coverPic) => {
@@ -190,8 +191,7 @@ export const FirebaseProvider = (probs) => {
             }
         }, [user])
     };
-
-    
+   
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
@@ -206,7 +206,7 @@ export const FirebaseProvider = (probs) => {
         isLoggedIn,
         SubCollection,
         user,
-        signOut
+        signout
     }}>
         {probs.children}
     </FirebaseContext.Provider>
