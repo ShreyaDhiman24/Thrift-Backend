@@ -7,7 +7,7 @@ function LogoutPage() {
   const firebase = useFirebase();
   const handleLogout = async(e) =>{
     firebase.signout();
-    alert('I M Logoed Out')
+    alert('Logged Out!')
   }
 
 

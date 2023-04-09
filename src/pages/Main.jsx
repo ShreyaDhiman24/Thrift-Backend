@@ -60,11 +60,11 @@ const Main = () => {
                       </div>
                     </div>
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="w-44 h-64 rounded-lg overflow-hidden ">
+                    <div className="w-46 h-64 rounded-lg overflow-hidden">
                         <img
-                          src="/library.png"
+                          src="/story2.jpg"
                           alt=""
-                          className="mt-5 sm:mt-0 invisible xs:visible w-full h-full object-center object-cover rounded-lg "
+                          className="w-full h-full object-center object-cover"
                         />
                       </div>
                       <div className="w-46 h-64 rounded-lg overflow-hidden">

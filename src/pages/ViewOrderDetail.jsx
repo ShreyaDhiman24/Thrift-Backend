@@ -35,8 +35,8 @@ const ViewOrderDetails = () => {
     }, []); // imports our orders
 
     const handleAcceptClick = () => {
-        alert('hjhj')
-        // Call the SubCollection function here
+        alert('Order Accepted and Completed!')
+    
         useFirebase.SubCollection();
     }
 

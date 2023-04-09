@@ -41,6 +41,13 @@
     width: 100%;
     padding: 10px;
   }
-  #form{
+  #form {
     width: 50%;
   }
+  
+  @media (max-width: 767px) {
+    #form {
+      width:90%;
+    }
+  }
+  

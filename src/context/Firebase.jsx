@@ -153,7 +153,7 @@ export const FirebaseProvider = (probs) => {
 
     const isLoggedIn = user ? true : false;
 
-    const SubCollection = () => {
+    const Subcollection = () => {
         const [workData, setworkData] =useState([])
         //const {handleSignInWithGoogle, user} =useFirebase()
         const db =getFirestore()
@@ -191,7 +191,6 @@ export const FirebaseProvider = (probs) => {
             }
         }, [user])
     };
-   
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
@@ -204,7 +203,6 @@ export const FirebaseProvider = (probs) => {
         fetchMyBooks,
         getOrders,
         isLoggedIn,
-        SubCollection,
         user,
         signout
     }}>

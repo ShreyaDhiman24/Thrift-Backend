@@ -33,7 +33,7 @@ const BookCard = (props) => {
                     Price: Rs.{props.price}
                 </div>
                 <button onClick={e => navigate(props.link)}
-                    variant="primary" class="button-71" role="button">View</button>
+                    variant="primary" className="button-71" role="button">View</button>
             </Card.Body>
            
         </div>

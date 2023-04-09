@@ -49,7 +49,7 @@ const ProjectDetail = () => {
               <li className="my-2"> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">Backend: Firebase</a></li>
 
               <li className="my-2 text-black-600">
-                <Link to="/geolocaton" className="text-black-600">Google Geolocation API</Link></li>
+                <Link to="/geolocation" className="text-black-600">Google Geolocation API</Link></li>
             </ul>
           </div>
 

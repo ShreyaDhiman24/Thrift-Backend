@@ -72,11 +72,11 @@ const RegisterPage = () => {
                     />
                 </Form.Group>
                 <div id="button-group">
-                <button class="button-71" role="button" variant="primary" type="submit" >
+                <button className="button-71" role="button" variant="primary" type="submit" >
                     Create Account
                 </button>
             <h1 className="m-3">OR</h1>
-            <button onClick={firebase.signinWithGoogle} variant="danger" class="button-71" role="button">SignUp with Google</button>
+            <button onClick={firebase.signinWithGoogle} variant="danger" className="button-71" role="button">SignUp with Google</button>
             </div>
             </Form>
         </div>
