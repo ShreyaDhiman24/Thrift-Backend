@@ -139,14 +139,14 @@ export const FirebaseProvider = (probs) => {
 
     const getOrders = async (bookId) => {
         const collectionRef = collection(firestore, "books", bookId, "orders");
-        console.log(collectionRef);
+        // console.log(collectionRef);
         const result = await getDocs(collectionRef);
         return result;
     };
 
     const getOrderById = async (bookId, id) => {
         const docRef = doc(firestore, "books", bookId, "orders", id);
-        console.log(docRef);
+        // console.log(docRef);
         const result = await getDoc(docRef);
         return result;
     };
@@ -176,7 +176,7 @@ export const FirebaseProvider = (probs) => {
                         const orders = workDetails.docs.map((doc) => ({
                             ...doc.data, id: doc.id
                         }))
-                        console.log(orders);
+                        // console.log(orders);
 
                         if (orders.length > 0) {
                             // delete the first order for this book
@@ -184,13 +184,15 @@ export const FirebaseProvider = (probs) => {
                             await deleteDoc(doc(db, `books/${elem.id}/orders/${orderToDelete.id}`));
                             console.log(`Deleted order ${orderToDelete.id} for book ${elem.id}`);
                           }
-                          console.log(orders)
+                        //   console.log(orders)
                     })
                 }
                 getData();
             }
         }, [user])
     };
+
+    Subcollection()
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
@@ -204,6 +206,7 @@ export const FirebaseProvider = (probs) => {
         getOrders,
         isLoggedIn,
         user,
+        Subcollection,
         signout
     }}>
         {probs.children}

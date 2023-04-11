@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useFirebase } from "../context/Firebase";
 import '../css/Button.css';
@@ -19,7 +18,6 @@ e.preventDefault();
 await firebase.handleCreateNewListing(name, isbnNumber, price, coverPic ) //
 alert("Your listing has been created Successfully!")
     };
-
     return (
         <>
         <div className="glass-container"> 
@@ -72,7 +70,7 @@ alert("Your listing has been created Successfully!")
                     />
                 </Form.Group>
 
-                <button class="button-71" role="button" variant="primary" type="submit">
+                <button className="button-71" role="button" variant="primary" type="submit">
                     Create
                 </button>
             </Form>

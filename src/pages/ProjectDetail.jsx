@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../css/ProjectDetail.css";
 
 const ProjectDetail = () => {
@@ -47,9 +46,6 @@ const ProjectDetail = () => {
               <li className="my-2"><a href="https://legacy.reactjs.org/" target="_blank" rel="noreferrer">Frontend: React.js </a></li>
 
               <li className="my-2"> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">Backend: Firebase</a></li>
-
-              <li className="my-2 text-black-600">
-                <Link to="/geolocation" className="text-black-600">Google Geolocation API</Link></li>
             </ul>
           </div>
 

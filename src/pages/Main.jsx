@@ -30,8 +30,7 @@ const Main = () => {
            <strong>"Always give without remembering and always receive without
             forgetting."</strong><br></br>
             Thrift is a humanitarian effort dedicated to promoting literacy by
-            offering "FREE OLD BOOKS" to learners as well as other daily
-            necessities that are expensive.
+            offering "FREE OLD BOOKS" to learners.
             </p>
           </div>
           <div>

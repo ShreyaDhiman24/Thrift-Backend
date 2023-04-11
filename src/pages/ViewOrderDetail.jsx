@@ -31,13 +31,12 @@ const ViewOrderDetails = () => {
         firebase.getOrders(params.bookId)
             .then((orders => setOrders(orders.docs)));
 
-        console.log(params);
+        // console.log(params);
     }, []); // imports our orders
 
-    const handleAcceptClick = () => {
-        alert('Order Accepted and Completed!')
-    
-        useFirebase.SubCollection();
+    const handleAcceptClick = async() => {
+        alert('Order Accepted and Completed!');
+            await firebase.Subcollection(); 
     }
 
     return (
@@ -48,7 +47,9 @@ const ViewOrderDetails = () => {
                 <hr className="black-hr" />
                 <div className="row">
                     {orders.map((order, index) => {
-                         return <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
+                         return <>
+                         <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
+                         </>
                     })}
                 </div>
             </div>

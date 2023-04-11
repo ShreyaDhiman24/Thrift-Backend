@@ -19,7 +19,7 @@ const MyNavbar = () => {
         <Navbar bg="muted" variant="black" className="glassmorphism sticky-top" expand="md">
             <Container fluid className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center">
-                    <Navbar.Brand href="#home" className="mx-2 mb-0"> <img src="mainlogo.png" alt='logo' className="w-30 h-16"/></Navbar.Brand>
+                    <Navbar.Brand href="#home" className="mx-2 mb-0"> <img src="/mainlogo.png" alt='logo' className="w-30 h-16"/></Navbar.Brand>
                 </div>
                 <Navbar.Toggle aria-controls="navbar-nav" />
                 <Navbar.Collapse id="navbar-nav" className="justify-content-end">
@@ -30,7 +30,7 @@ const MyNavbar = () => {
                         <Nav.Link className="mx-3" onClick={handleDropdownToggle}>
                             Account
                             {showDropdown && (
-                                <Nav className="dropdown-menu my-dropdown-menu" style={{ fontSize: '20px', fontWeight: 'bold' }} onClick={handleDropdownClick}>
+                                <Nav className="dropdown-menu my-dropdown-menu menu-list" style={{ fontSize: '20px', fontWeight: 'bold'}} onClick={handleDropdownClick}>
                                     <div id="box" className="glassmorphism">
                                     <div className="row">
                                         <div className="col">
