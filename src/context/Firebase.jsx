@@ -154,6 +154,17 @@ export const FirebaseProvider = (probs) => {
 
     const isLoggedIn = user ? true : false;
 
+    const deleteBook = async (bookId) => {
+        try {
+          const bookRef = doc(db, 'books', bookId);
+          await deleteDoc(bookRef);
+          console.log('Book deleted successfully');
+        } catch (error) {
+          console.error('Error deleting book:', error);
+        }
+      };
+     
+
     const Subcollection = () => {
         const [workData, setworkData] =useState([])
         //const {handleSignInWithGoogle, user} =useFirebase()
@@ -193,7 +204,6 @@ export const FirebaseProvider = (probs) => {
         }, [user])
     };
 
-    Subcollection()
 
     return (<FirebaseContext.Provider value={{
         signupUserWithWmailAndPassword, signinUserWithEmailAndPassword,
@@ -208,7 +218,8 @@ export const FirebaseProvider = (probs) => {
         isLoggedIn,
         user,
         Subcollection,
-        signout
+        signout,
+        deleteBook
     }}>
         {probs.children}
     </FirebaseContext.Provider>

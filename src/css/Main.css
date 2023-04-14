@@ -67,3 +67,13 @@
   #Donate2{
     width: 345px;
   }
+  button.donate-now-button, button.donate-to-ngo-button {
+    text-decoration: none;
+    color: #2D3748;
+  }
+  
+  button.donate-now-button:hover, button.donate-to-ngo-button:hover {
+    background-color: #38A169;
+    color: #FFFFFF;
+  }
+  

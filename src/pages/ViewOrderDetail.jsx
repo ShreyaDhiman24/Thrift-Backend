@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useFirebase } from "../context/Firebase";
 import Delete from "./Delete";
 import '../css/Button.css';
+import '../css/ViewOrderDetails.css';
 
 const Order = ({ order, handleAcceptClick }) => {
     const data = order.data();
@@ -14,8 +15,14 @@ const Order = ({ order, handleAcceptClick }) => {
                 <h6>Quantity: {data.qty}</h6>
                 <p>Email: {data.userEmail}</p>
 
-                <button className="button-71 mr-2" role="button" onClick={handleAcceptClick}>Accept</button>
-                <Delete orderId={order.id} id="delete-button" />
+                <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+                    <button className="button-71 mr-2" role="button" id="hoverButton" onClick={handleAcceptClick}>
+                        Delete Order
+                        <span className="hover-text">Order Successfully Delivered</span>
+                    </button>
+                    <button className="button-71 mr-2" role="button" id="hoverButton2" onClick={handleAcceptClick}>Delete Book</button>
+                </div>
+
             </div>
         </div>
     );
@@ -34,9 +41,9 @@ const ViewOrderDetails = () => {
         // console.log(params);
     }, []); // imports our orders
 
-    const handleAcceptClick = async() => {
+    const handleAcceptClick = async () => {
         alert('Order Accepted and Completed!');
-            await firebase.Subcollection(); 
+        await firebase.Subcollection();
     }
 
     return (
@@ -47,9 +54,9 @@ const ViewOrderDetails = () => {
                 <hr className="black-hr" />
                 <div className="row">
                     {orders.map((order, index) => {
-                         return <>
-                         <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
-                         </>
+                        return <>
+                            <Order key={order.id} order={order} handleAcceptClick={handleAcceptClick} />
+                        </>
                     })}
                 </div>
             </div>

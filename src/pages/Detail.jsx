@@ -23,7 +23,7 @@ const BookDetailPage = () => {
       }
     
 
-    console.log(data);
+    // console.log(data);
     useEffect(() => {
         firebase.getBookById(params.bookID).then(value => setData(value.data()))
     }, []);
