@@ -13,13 +13,13 @@ function Geolocation() {
         setUserLocation(`Latitude: ${latitude}, Longitude: ${longitude}`);
         
 
-        // // Use the latitude and longitude to search for nearby NGOs
-        // const apiEndpoint = `https://api.ngoadvisor.net/api/v1/directory?lat=${latitude}&lng=${longitude}`;
-        // fetch(apiEndpoint)
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     setNearbyNgos(data);
-        //   });
+        // Use the latitude and longitude to search for nearby NGOs
+        const apiEndpoint = `https://api.ngoadvisor.net/api/v1/directory?lat=31.1048145&lng=77.1734033`;
+        fetch(apiEndpoint)
+          .then(response => response.json())
+          .then(data => {
+            setNearbyNgos(data);
+          });
       });
     }
   }, []);

@@ -69,7 +69,7 @@ const BookDetailPage = () => {
                     required
                 />
             </Form.Group>
-            <button onClick={() => {placeOrder(); handleClick();}} class="button-71" role="button" variant="success">Buy Now</button>
+            <button onClick={() => {placeOrder(); handleClick();}} className="button-71" role="button" variant="success">Buy Now</button>
         </div>
         </div>
     );

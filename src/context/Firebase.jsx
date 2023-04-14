@@ -32,13 +32,14 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 const FirebaseContext = createContext(null);
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCjPt0uV_7e2-F0UufeuFpP6Zod6rYHE2M",
-    authDomain: "bookify-7be2e.firebaseapp.com",
-    projectId: "bookify-7be2e",
-    storageBucket: "bookify-7be2e.appspot.com",
-    messagingSenderId: "77073578413",
-    appId: "1:77073578413:web:3aa60b336f9d01c4270924"
-};
+    apiKey: "AIzaSyD81gQq4RAEXUP87YDRAxKqTQe5xaw4REU",
+    authDomain: "bookify-2b4fe.firebaseapp.com",
+    projectId: "bookify-2b4fe",
+    storageBucket: "bookify-2b4fe.appspot.com",
+    messagingSenderId: "293891283866",
+    appId: "1:293891283866:web:c747d46bad9f7d06b2b823"
+  };
+  
 
 export const useFirebase = () => useContext(FirebaseContext);
 

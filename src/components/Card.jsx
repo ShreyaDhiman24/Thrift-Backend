@@ -28,8 +28,8 @@ const BookCard = (props) => {
                 <br></br>
                 <Card.Title><strong>{props.name}</strong></Card.Title>
                 <div className="text_inside">
-                    Title: {props.name} <br />
-                    Seller: {props.displayName} <br />
+                    {/* Title: {props.name} <br /> */}
+                    {/* Seller: {props.displayName} <br /> */}
                     Price: Rs.{props.price}
                 </div>
                 <button onClick={e => navigate(props.link)}

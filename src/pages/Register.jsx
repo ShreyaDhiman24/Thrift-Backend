@@ -13,8 +13,7 @@ import '../css/Logout.css';
 const RegisterPage = () => {
     const firebase = useFirebase();
     const navigate = useNavigate();
-
-    const [displayName, setName] = useState('');
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -22,6 +21,7 @@ const RegisterPage = () => {
         if (firebase.isLoggedIn) {
             //navigate to home
             navigate("/");
+            alert("You are already LoggedIn!")
         }
     }, [firebase, navigate]);
 
@@ -37,7 +37,7 @@ const RegisterPage = () => {
    return (
         <div id="form" className="container mt-5">
             <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            {/* <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Display Name</Form.Label>
                     <Form.Control
                         onChange={(e) => setName(e.target.value)}
@@ -46,7 +46,7 @@ const RegisterPage = () => {
                         placeholder="Enter your name"
                         required
                     />
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
