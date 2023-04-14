@@ -20,6 +20,9 @@ import LogoutPage from "./pages/LogOut";
 import ProjectDetail from "./pages/ProjectDetail";
 import Geolocation from "./pages/Geolocation";
 
+//donate
+// import DonationAddressForm from "./donatengo/donationngoform";
+
 // CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
@@ -69,6 +72,7 @@ function App() {
         <Route path="/logout" element={<LogoutPage />} />
         <Route path="/projectdetails" element={<ProjectDetail />} />
         <Route path="/geolocation" element={<Geolocation />} />
+        
       </Routes>
     </div>
   );

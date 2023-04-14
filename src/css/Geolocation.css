@@ -1,0 +1,25 @@
+/* #cont{
+    width: 100%;
+} */
+.geolocation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .user-location {
+    margin-bottom: 50px;
+  }
+  
+  .user-location-text {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .user-location {
+      font-size: 24px;
+    }
+  }
+  
